@@ -1,24 +1,25 @@
 {
-    "compilerOptions": {
-      "target": "ES2020",                      
-      "module": "ES2020",                 
-      "outDir": "./dist",                   // Where to output compiled JavaScript
-      "rootDir": "./src",                   // Where your TypeScript source files are
-      "strict": true,                       // Enables all strict type-checking options
-      "esModuleInterop": true,              // Enables interoperability between CommonJS and ES Modules
-      "skipLibCheck": true,                 // Skip type checking of all declaration files (*.d.ts)
-      "forceConsistentCasingInFileNames": true,
-      "allowJs": true,                      // Allow JavaScript files to be compiled
-      "noImplicitAny": true,                // Raise error on expressions and declarations with an implied 'any' type
-      "moduleResolution": "node",           // Usually default, ensures @types packages are found
-      // "sourceMap": true,                 // Generate source maps for easier debugging
-      // "lib": ["es6", "dom"]              // Specify library files to be included in the compilation
-    },
-    "include": [
-      "src/**/*"                            // Which files TypeScript should compile
-    ],
-    "exclude": [
-      "node_modules",
-      "dist"
-    ]
-  }
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler", // Or "node" if "bundler" is problematic
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true, // Important for Vite
+    "noEmit": true,          // Vite handles the emitting/transpilation
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true // Often useful
+  },
+  "include": ["src"]
+}
